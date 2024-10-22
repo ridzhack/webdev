@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Tambah Mahasiswa</title>
+    <style>
+        h1 {
+            margin-left: 500px;
+            margin-top: 150px;
+        }
+        form {
+            margin-left: 500px;
+        }
+        #buttonsubmit {
+            margin-left: 700px;
+            margin-top: 20px;
+        }
+        #clock {
+            margin-left: 550px;
+            font-size: 50px;
+        }
+        .studentForm {
+            margin-bottom: 50px;
+
+        }
+    </style>
+</head>
+<body>
+        <p id="clock"></p>
+    <div id="anotherLine">
+        <h1>Tambah Mahasiswa</h1>
+    <div id="formContainer">    
+        <form class="studentForm">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name"onchange="upperCase()"><br><br>
+        
+        <label for="NIM">NIM</label>
+        <input type="number"/><br><br>
+        <label for="">Jenis Kelamin</label>
+        <select>
+            <option disabled option>--Pilih Jenis Kelamin--/>
+            <option>Laki Laki</option><br>
+            <option>Perempuan</option><br>       
+        </select><br>
+     </div>
+        <button id="buttonsubmit">Submit</button>
+    </form>
+        <button onclick="addMore()">Tambah Data Mahasiswa</button>
+</body>
+
+<script>
+    document.getElementById("buttonsubmit").addEventListener("click",function()
+    {
+        alert("Selamat data telah berhasil disimpan")
+
+    })
+    const nameInput = document.querySelector("#name");
+        nameInput.addEventListener("blur", function() {
+            nameInput.value = nameInput.value.toUpperCase();
+    });
+
+    function addMore() {
+    const formContainer = document.getElementById("formContainer");
+    const newForm = document.createElement("form");
+    newForm.classList.add("studentForm");
+    newForm.innerHTML = `
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" onchange="upperCase()"><br><br>
+        
+        <label for="nim">NIM</label>
+        <input type="number" id="nim" required/><br><br>
+        
+        <label for="gender">Jenis Kelamin</label>
+        <select id="gender" required>
+            <option value="" disabled selected>--Pilih Jenis Kelamin--</option>
+            <option value="Laki Laki">Laki Laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select><br><br>
+    `;
+    formContainer.appendChild(newForm);
+    }
+
+    
+            
+    function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.querySelector("#clock").textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+</script>
+</html>

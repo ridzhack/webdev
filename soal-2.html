@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            background-color: rgb(70, 70, 236);
+            padding: 10px;
+            grid-gap: 10px;
+            grid-template-areas: 
+            "One One" 
+            "Two Three"
+            "span Four";
+            
+            
+
+        }
+        .grid-item {  
+            background-color: lightblue;
+            border: 1px solid black
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 10px;
+            
+        }
+        .item1 {
+            grid-area: One;
+        }
+        .item2 {
+            grid-area: Two;
+        }
+        .item3 {
+            grid-area: Three;
+        }
+        .item4 {
+            grid-area: Four;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-item item1">One</div>
+        <div class="grid-item item2">Two</div>
+        <div class="grid-item item3">Three</div>
+        <div class="grid-item item4">Four</div>
+    </div>    
+    </body>
+</html>

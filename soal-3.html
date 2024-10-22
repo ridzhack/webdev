@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        .container {
+            display: grid;
+            background-image: url(aboutme.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 10px;
+            grid-gap: 10px;
+            grid-template-areas:
+            "h1 h1"
+            "nama nama"
+            "ttl asal"
+            "img img" 
+            "para para"
+            "link link2";
+            text-align: center;
+
+        }
+        .grid-item {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid black
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 10px;
+
+        }
+        
+        .item1 {
+            grid-area: nama;
+        }
+        .item2 {
+            grid-area: ttl;    
+        } 
+        .item3 {
+            grid-area: asal;
+        }
+        .item4 {
+            grid-area: img;
+        }
+        .item5 {
+            grid-area: para;
+        }
+        .item6 {
+            grid-area: h1;
+        }
+        .item7 {
+            grid-area: link;
+        }
+        .item8 {
+            grid-area: link2;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class="grid-item item6">
+            <h1>About Me</h1>
+        </div>
+        <div class="grid-item item1">Faridz Kurniawan Ekananta</div>
+        <div class="grid-item item2">10 Desember 2005</div>
+        <div class="grid-item item3">Jakarta Utara</div>
+        <div class="grid-item item4">
+        <img style="width: 200px;" src="prd.jpg" alt="Foto Profil" class="profile.pic"></div>
+        <div class="grid-item item5">
+        <p>Halo, Namaku Faridz Kurniawan Ekananta. Asal dari Jakarta Utara. Aku sangat bersemangat dalam belajar Web Development dan aku suka belajar hal-hal baru</p>
+        </div>
+        <div class="grid-item item7">
+            <a href="faridkurniawan191@gmail.com" target="_blank">Gmail</a>
+        </div>    
+        <div class="grid-item item8">    
+            <a href="https://www.instagram.com/fr1ddz" target="_blank">Instagram</a>
+        </div>
+
+    </div>
+</body>
+</html>
